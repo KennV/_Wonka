@@ -1,0 +1,11 @@
+
+mkdir -p ~/Developer/aLib/alib
+cd ~/Developer/aLib/alib
+swift package init --type library
+
+mkdir -p ~/Developer/aLib/xApp
+cd ~/Developer/aLib/xApp
+swift package init --type executable
+swift package generate-xcodeproj
+
+pod lib create MyLibrary
