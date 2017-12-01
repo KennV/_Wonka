@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08DD7F1044E745D7AA39A841 /* libPods-KVAbstractDataLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07791729274DAFF1320406BE /* libPods-KVAbstractDataLibrary.a */; };
+		380DADB71FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 380DADB61FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.h */; };
+		380DADB91FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 380DADB81FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07791729274DAFF1320406BE /* libPods-KVAbstractDataLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KVAbstractDataLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		380DADB31FD0FB0E00D1EEF5 /* libKVAbstractDataLibrary.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libKVAbstractDataLibrary.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		380DADB61FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVAbstractDataLibrary.h; sourceTree = "<group>"; };
+		380DADB81FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVAbstractDataLibrary.m; sourceTree = "<group>"; };
+		5838A205DF3D6FB4076FAE28 /* Pods-KVAbstractDataLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVAbstractDataLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KVAbstractDataLibrary/Pods-KVAbstractDataLibrary.debug.xcconfig"; sourceTree = "<group>"; };
+		B39B6587607E7B0A84BE9474 /* Pods-KVAbstractDataLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVAbstractDataLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-KVAbstractDataLibrary/Pods-KVAbstractDataLibrary.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		380DADB01FD0FB0E00D1EEF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08DD7F1044E745D7AA39A841 /* libPods-KVAbstractDataLibrary.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2334F0BB8095BAA71368E83F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07791729274DAFF1320406BE /* libPods-KVAbstractDataLibrary.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		380DADAA1FD0FB0E00D1EEF5 = {
+			isa = PBXGroup;
+			children = (
+				380DADB51FD0FB0E00D1EEF5 /* KVAbstractDataLibrary */,
+				380DADB41FD0FB0E00D1EEF5 /* Products */,
+				9BDD205AD05A75117E14ADBF /* Pods */,
+				2334F0BB8095BAA71368E83F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		380DADB41FD0FB0E00D1EEF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				380DADB31FD0FB0E00D1EEF5 /* libKVAbstractDataLibrary.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		380DADB51FD0FB0E00D1EEF5 /* KVAbstractDataLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				380DADB61FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.h */,
+				380DADB81FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.m */,
+			);
+			path = KVAbstractDataLibrary;
+			sourceTree = "<group>";
+		};
+		9BDD205AD05A75117E14ADBF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5838A205DF3D6FB4076FAE28 /* Pods-KVAbstractDataLibrary.debug.xcconfig */,
+				B39B6587607E7B0A84BE9474 /* Pods-KVAbstractDataLibrary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		380DADB11FD0FB0E00D1EEF5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380DADB71FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		380DADB21FD0FB0E00D1EEF5 /* KVAbstractDataLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 380DADBC1FD0FB0E00D1EEF5 /* Build configuration list for PBXNativeTarget "KVAbstractDataLibrary" */;
+			buildPhases = (
+				EEFE4F61753C036216A9C808 /* [CP] Check Pods Manifest.lock */,
+				380DADAF1FD0FB0E00D1EEF5 /* Sources */,
+				380DADB01FD0FB0E00D1EEF5 /* Frameworks */,
+				380DADB11FD0FB0E00D1EEF5 /* Headers */,
+				FFD1179236B663915B7EE926 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KVAbstractDataLibrary;
+			productName = KVAbstractDataLibrary;
+			productReference = 380DADB31FD0FB0E00D1EEF5 /* libKVAbstractDataLibrary.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		380DADAB1FD0FB0E00D1EEF5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = dubian;
+				TargetAttributes = {
+					380DADB21FD0FB0E00D1EEF5 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 380DADAE1FD0FB0E00D1EEF5 /* Build configuration list for PBXProject "KVAbstractDataLibrary" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 380DADAA1FD0FB0E00D1EEF5;
+			productRefGroup = 380DADB41FD0FB0E00D1EEF5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				380DADB21FD0FB0E00D1EEF5 /* KVAbstractDataLibrary */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EEFE4F61753C036216A9C808 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FFD1179236B663915B7EE926 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KVAbstractDataLibrary/Pods-KVAbstractDataLibrary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		380DADAF1FD0FB0E00D1EEF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				380DADB91FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		380DADBA1FD0FB0E00D1EEF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		380DADBB1FD0FB0E00D1EEF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		380DADBD1FD0FB0E00D1EEF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5838A205DF3D6FB4076FAE28 /* Pods-KVAbstractDataLibrary.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		380DADBE1FD0FB0E00D1EEF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B39B6587607E7B0A84BE9474 /* Pods-KVAbstractDataLibrary.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQ75G5YK98;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		380DADAE1FD0FB0E00D1EEF5 /* Build configuration list for PBXProject "KVAbstractDataLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380DADBA1FD0FB0E00D1EEF5 /* Debug */,
+				380DADBB1FD0FB0E00D1EEF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		380DADBC1FD0FB0E00D1EEF5 /* Build configuration list for PBXNativeTarget "KVAbstractDataLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				380DADBD1FD0FB0E00D1EEF5 /* Debug */,
+				380DADBE1FD0FB0E00D1EEF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 380DADAB1FD0FB0E00D1EEF5 /* Project object */;
+}
