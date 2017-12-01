@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		08DD7F1044E745D7AA39A841 /* libPods-KVAbstractDataLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07791729274DAFF1320406BE /* libPods-KVAbstractDataLibrary.a */; };
-		380DADB71FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = 380DADB61FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.h */; };
-		380DADB91FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 380DADB81FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.m */; };
+		3844B9B31FD0FF9600A187DD /* KVAbstractDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3844B9B11FD0FF9600A187DD /* KVAbstractDataController.m */; };
+		3844B9B41FD0FF9600A187DD /* KVAbstractDataController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3844B9B21FD0FF9600A187DD /* KVAbstractDataController.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07791729274DAFF1320406BE /* libPods-KVAbstractDataLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KVAbstractDataLibrary.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		380DADB31FD0FB0E00D1EEF5 /* libKVAbstractDataLibrary.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libKVAbstractDataLibrary.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		380DADB61FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVAbstractDataLibrary.h; sourceTree = "<group>"; };
-		380DADB81FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVAbstractDataLibrary.m; sourceTree = "<group>"; };
+		3844B9B11FD0FF9600A187DD /* KVAbstractDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVAbstractDataController.m; sourceTree = "<group>"; };
+		3844B9B21FD0FF9600A187DD /* KVAbstractDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVAbstractDataController.h; sourceTree = "<group>"; };
 		5838A205DF3D6FB4076FAE28 /* Pods-KVAbstractDataLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVAbstractDataLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KVAbstractDataLibrary/Pods-KVAbstractDataLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 		B39B6587607E7B0A84BE9474 /* Pods-KVAbstractDataLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KVAbstractDataLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-KVAbstractDataLibrary/Pods-KVAbstractDataLibrary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,8 +62,8 @@
 		380DADB51FD0FB0E00D1EEF5 /* KVAbstractDataLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				380DADB61FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.h */,
-				380DADB81FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.m */,
+				3844B9B21FD0FF9600A187DD /* KVAbstractDataController.h */,
+				3844B9B11FD0FF9600A187DD /* KVAbstractDataController.m */,
 			);
 			path = KVAbstractDataLibrary;
 			sourceTree = "<group>";
@@ -84,7 +84,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				380DADB71FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.h in Headers */,
+				3844B9B41FD0FF9600A187DD /* KVAbstractDataController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				380DADB91FD0FB0E00D1EEF5 /* KVAbstractDataLibrary.m in Sources */,
+				3844B9B31FD0FF9600A187DD /* KVAbstractDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
