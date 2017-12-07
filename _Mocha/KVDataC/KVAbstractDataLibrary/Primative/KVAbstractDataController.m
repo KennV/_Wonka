@@ -42,6 +42,7 @@
     // The directory the application uses to store the Core Data store file. This code uses a directory named "edu._Company._Application" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
 - (NSManagedObjectModel *)MOM {
     // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
     if (_MOM != nil) {
@@ -51,6 +52,7 @@
     _MOM = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _MOM;
 }
+
 - (NSPersistentStoreCoordinator *)PSK {
     // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it.
     if (_PSK != nil) {
@@ -78,6 +80,7 @@
     
     return _PSK;
 }
+
 - (NSManagedObjectContext *)MOC {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
     if (_MOC != nil) {
@@ -92,6 +95,7 @@
     [_MOC setPersistentStoreCoordinator:coordinator];
     return _MOC;
 }
+
 #pragma mark - Core Data Saving support
 - (void)saveContext {
     NSManagedObjectContext *managedObjectContext = self.MOC;
@@ -105,7 +109,9 @@
         }
     }
 }
+
 #pragma mark -
+
 - (void)performAutomaticLightweightMigration {
     
     NSError *error;
@@ -126,9 +132,11 @@
 }
 
 #pragma mark - Fetched results controller
-// This is old code, and I use it on a table but I am not sure it goes here. But it can be cleaner
-// self.entityClassName
+
 - (NSFetchedResultsController *)fetchCon {
+  // This is old code, and I use it on a table but I am not sure it goes here. But it can be cleaner
+  // self.entityClassName
+
     if (_fetchCon != nil) {
         return _fetchCon;
     }
@@ -159,6 +167,7 @@
     }
     return _fetchCon;
 }
+
 - (NSArray *)miObjects {
     if (!_miObjects) {
         _miObjects = [[NSMutableArray alloc]init];
@@ -175,6 +184,7 @@
 //    NSLog(@"stack = %lu",(unsigned long)[_miObjects count]); only log this once
     return _miObjects;
 }
+
 #pragma mark - Control
 - (void)makeNewPerson {
 //    KVPerson *p = [NSEntityDescription insertNewObjectForEntityForName:(@"KVPerson") inManagedObjectContext:self.MOC];
@@ -188,21 +198,24 @@
 //        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 //        abort(); }
 }
+
 - (void)deleteAnObject:(id)thisObjOrNil {
     ; // That's nifty if I do not pass it a valid obj then I will delete first or last
 }
 #pragma mark - utilities
-// Creates a new entity of the default type and adds it to the managed object context
+
 - (NSManagedObject *)createEntity
 {
     return [NSEntityDescription insertNewObjectForEntityForName:self.entityClassName inManagedObjectContext:[self MOC]];
 }
-// Delete the specified entity
+
 - (void)deleteEntity:(NSManagedObject *)e  {
     [self.MOC deleteObject:e];
 }
-// Gets entities for the specified request
-- (NSMutableArray *)getEntities:(NSString *)entityName sortedBy:(NSSortDescriptor *)sortDescriptor matchingPredicate:(NSPredicate *)predicate
+
+- (NSMutableArray *)getEntities:(NSString *)entityName
+                       sortedBy:(NSSortDescriptor *)sortDescriptor
+              matchingPredicate:(NSPredicate *)predicate
 {
     NSError *error = nil;
     
@@ -235,19 +248,16 @@
     return mutableFetchResults;
 }
 
-// Gets all entities of the default type
 - (NSMutableArray *)getAllEntities
 {
     return [self getEntities:self.entityClassName sortedBy:nil matchingPredicate:nil];
 }
 
-// Gets entities of the default type matching the predicate
 - (NSMutableArray *)getEntitiesMatchingPredicate: (NSPredicate *)p
 {
     return [self getEntities:self.entityClassName sortedBy:nil matchingPredicate:p];
 }
 
-// Gets entities of the default type matching the predicate string
 - (NSMutableArray *)getEntitiesMatchingPredicateString: (NSString *)predicateString, ...;
 {
     va_list variadicArguments;
@@ -258,16 +268,13 @@
     return [self getEntities:self.entityClassName sortedBy:nil matchingPredicate:predicate];
 }
 
-// Get entities of the default type sorted by descriptor matching the predicate
 - (NSMutableArray *)getEntitiesSortedBy:(NSSortDescriptor *)sortDescriptor
                       matchingPredicate:(NSPredicate *)predicate
 {
     return [self getEntities:self.entityClassName sortedBy:sortDescriptor matchingPredicate:predicate];
 }
-// Gets entities of the specified type sorted by descriptor, and matching the predicate string
-- (NSMutableArray *)getEntities:(NSString *)entityName
-                       sortedBy:(NSSortDescriptor *)sortDescriptor
-        matchingPredicateString:(NSString *)predicateString, ...;
+
+- (NSMutableArray *)getEntities:(NSString *)entityName sortedBy:(NSSortDescriptor *)sortDescriptor matchingPredicateString:(NSString *)predicateString, ...;
 {
     va_list variadicArguments;
     va_start(variadicArguments, predicateString);
@@ -276,11 +283,12 @@
     va_end(variadicArguments);
     return [self getEntities:entityName sortedBy:sortDescriptor matchingPredicate:predicate];
 }
+
 - (void) registerRelatedObject:(KVAbstractDataController *)controllerObject
 {
     controllerObject.MOC = self.MOC;
 }
-// Saves all changes (insert, update, delete) of entities
+
 - (void)saveEntities
 {
     NSError *error = nil;
