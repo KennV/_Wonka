@@ -1,5 +1,5 @@
 # To make an apple pie you must first build a universe #
-Yannow, the funny thing is IDK whho 'is' the owner of the 3 letter suffix for .rad, it is immeterial at this point. My current intention is to regulate all of the strange libraries into a pod-spec, and at best a swift package {even if the core is in Cocoa} SPM, at the very least I should be able to init a swift package and then use an identical tree stucture to do it in Obj-C _then if needed_ I may bridge it to swift.
+Yannow, the funny thing is IDK who 'is' the owner of the 3 letter suffix for .rad, it is immeterial at this point. My current intention is to regulate all of the strange libraries into a pod-spec, and at best a swift package {even if the core is in Cocoa} SPM, at the very least I should be able to init a swift package and then use an identical tree stucture to do it in Obj-C _then if needed_ I may bridge it to swift.
 # Next; to build a _Universe_ I must build _Tests_ #
 Literaly and figuratively I am testing against the void., And I want to build this into the pod-spec. It is sort of imperative. Yes I know that I am not supposed to be testing against CoreData. _But_ that is not what I would be testing I should be testing whether this controller _and / or_ it's delegate conforms to the protocol. {mind you the second part is _muy defcile_} 
 See in Cocoa Runtime the type is dynamic, it is generally (id):_iName, in practice it could just as well be (NSString *):_iName, or in the case of a protocol say {@NameFormatting} the call would look more like (NSSting <NameFormatting>):_iNameService _or similar_
@@ -15,3 +15,8 @@ My published Class should include these basic tests.
 	• InitAllUp:
 And likely a few others. Let This Class Test Itself, _really_. Include these tests in the published class. And document the acceptable ranges and exceptions and why. Maybe even have the abstract class init/DefaultInit with a set of exluded values like "zyxxyz" or the square of -2 right and then have the Actual (non abstract class test against that). 
 I Mean Don't get me wrong type safety is nice and all but I am still going to have to test it *AND* I have so many interfaces to introspect the given object as a type ::isa: or as ::conformsToProtocol:  
+
+## setting the framework. ## 
+20171207@1530
+And this is where it becomes nice.
+My original plan was to make a plan; and that is clever and a half again. (*maybe too clever for my own good.*) So that is not what happened. The actual first thing to do is to add markdown helper comments on all of the functions in the base header. As a benefit then I would also have no need for comments in the implementation. Then when it is nice and clean and documented and formatted, maybe even some refactoring I will run a small kit of tests on this. I added the gitignore to this so lets see what happens next.

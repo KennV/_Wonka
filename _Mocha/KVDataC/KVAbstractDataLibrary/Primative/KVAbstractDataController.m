@@ -172,7 +172,7 @@
     if (!_miObjects) {
         _miObjects = [[NSMutableArray alloc]init];
     }
-    NSEntityDescription *enitiyOne = [[self.fetchCon fetchRequest] entity]; //Hmm??
+  NSEntityDescription *enitiyOne = [[[self fetchCon] fetchRequest] entity]; //Hmm??
     NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:[enitiyOne name]];
     NSError *error = nil;
 
@@ -206,11 +206,11 @@
 
 - (NSManagedObject *)createEntity
 {
-    return [NSEntityDescription insertNewObjectForEntityForName:self.entityClassName inManagedObjectContext:[self MOC]];
+    return [NSEntityDescription insertNewObjectForEntityForName:[self entityClassName] inManagedObjectContext:[self MOC]];
 }
 
 - (void)deleteEntity:(NSManagedObject *)e  {
-    [self.MOC deleteObject:e];
+    [[self MOC] deleteObject:e];
 }
 
 - (NSMutableArray *)getEntities:(NSString *)entityName
@@ -250,12 +250,12 @@
 
 - (NSMutableArray *)getAllEntities
 {
-    return [self getEntities:self.entityClassName sortedBy:nil matchingPredicate:nil];
+    return [self getEntities:[self entityClassName] sortedBy:nil matchingPredicate:nil];
 }
 
 - (NSMutableArray *)getEntitiesMatchingPredicate: (NSPredicate *)p
 {
-    return [self getEntities:self.entityClassName sortedBy:nil matchingPredicate:p];
+    return [self getEntities:[self entityClassName] sortedBy:nil matchingPredicate:p];
 }
 
 - (NSMutableArray *)getEntitiesMatchingPredicateString: (NSString *)predicateString, ...;
@@ -265,13 +265,13 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateString
                                                     arguments:variadicArguments];
     va_end(variadicArguments);
-    return [self getEntities:self.entityClassName sortedBy:nil matchingPredicate:predicate];
+    return [self getEntities:[self entityClassName] sortedBy:nil matchingPredicate:predicate];
 }
 
 - (NSMutableArray *)getEntitiesSortedBy:(NSSortDescriptor *)sortDescriptor
                       matchingPredicate:(NSPredicate *)predicate
 {
-    return [self getEntities:self.entityClassName sortedBy:sortDescriptor matchingPredicate:predicate];
+    return [self getEntities:[self entityClassName] sortedBy:sortDescriptor matchingPredicate:predicate];
 }
 
 - (NSMutableArray *)getEntities:(NSString *)entityName sortedBy:(NSSortDescriptor *)sortDescriptor matchingPredicateString:(NSString *)predicateString, ...;
@@ -286,13 +286,13 @@
 
 - (void) registerRelatedObject:(KVAbstractDataController *)controllerObject
 {
-    controllerObject.MOC = self.MOC;
+    controllerObject.MOC = [self MOC];
 }
 
 - (void)saveEntities
 {
     NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.MOC;
+    NSManagedObjectContext *managedObjectContext = [self MOC];
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
