@@ -6,6 +6,12 @@
   Copyright © 2015 K3nnV. All rights reserved.
 */
 
+/*
+NOW at some point I am going to flatten the curly braces on these function blocks
+That is not a priority
+ 
+ */
+
 #import "KVAbstractDataController.h"
 
 @interface KVAbstractDataController () {
@@ -23,17 +29,17 @@
     if (!(self = [super init])) {
         return nil;
     }
-//    if (!self.PSK.description) {
+//    if (![self PSK].description) {
 //        NSLog(@"Could Not Init PSCoordinator");
 //    }
-//    if (!self.MOC.description) {
+//    if (![self MOC].description) {
 //        NSLog(@"Could Not Init Context");
 //    }
 //    if (!self.MOM.description) {
 //        NSLog(@"Could Not Init Model");
 //    }
     _copyDatabaseIfNotPresent = YES;
-    NSLog(@"applicationDocumentsDirectory = %@",self.applicationDocumentsDirectory);
+    NSLog(@"applicationDocumentsDirectory = %@",[self applicationDocumentsDirectory]);
     return self;
 }
 
@@ -98,7 +104,7 @@
 
 #pragma mark - Core Data Saving support
 - (void)saveContext {
-    NSManagedObjectContext *managedObjectContext = self.MOC;
+    NSManagedObjectContext *managedObjectContext = [self MOC];
     if (managedObjectContext != nil) {
         NSError *error = nil;
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
@@ -116,7 +122,7 @@
     
     NSError *error;
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@%@", self.dbName, @".sqlite"]];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@%@", [self dbName], @".sqlite"]];
     
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
                              [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
@@ -135,14 +141,14 @@
 
 - (NSFetchedResultsController *)fetchCon {
   // This is old code, and I use it on a table but I am not sure it goes here. But it can be cleaner
-  // self.entityClassName
+  // [self entityClassName]
 
     if (_fetchCon != nil) {
         return _fetchCon;
     }
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate. (Event, RootEntity, ABSTRACT_OBJ)
-    NSEntityDescription *entity = [NSEntityDescription entityForName:self.entityClassName inManagedObjectContext:self.MOC];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:[self entityClassName] inManagedObjectContext:[self MOC]];
 
     [fetchRequest setEntity:entity];
     // Set the batch size to a suitable number.
@@ -154,13 +160,13 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.MOC sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[self MOC] sectionNameKeyPath:nil cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchCon = aFetchedResultsController;
     
     NSError *error = nil;
     
-    if (![self.fetchCon performFetch:&error]) {
+    if (![[self fetchCon] performFetch:&error]) {
         NSLog(@"It is Fun \nAND Insightful to Know when and Why this happened");
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
@@ -187,14 +193,14 @@
 
 #pragma mark - Control
 - (void)makeNewPerson {
-//    KVPerson *p = [NSEntityDescription insertNewObjectForEntityForName:(@"KVPerson") inManagedObjectContext:self.MOC];
-//    KVRootEntityData *d = [NSEntityDescription insertNewObjectForEntityForName:OBJ_DATA inManagedObjectContext:self.MOC];
-//    KVRootEntityGraphics *g = [NSEntityDescription insertNewObjectForEntityForName:OBJ_GRAPHICS inManagedObjectContext:self.MOC];
-//    KVRootEntityPhysics *physX = [NSEntityDescription insertNewObjectForEntityForName:OBJ_PHYSICS inManagedObjectContext:self.MOC];
+//    KVPerson *p = [NSEntityDescription insertNewObjectForEntityForName:(@"KVPerson") inManagedObjectContext:[self MOC]];
+//    KVRootEntityData *d = [NSEntityDescription insertNewObjectForEntityForName:OBJ_DATA inManagedObjectContext:[self MOC]];
+//    KVRootEntityGraphics *g = [NSEntityDescription insertNewObjectForEntityForName:OBJ_GRAPHICS inManagedObjectContext:[self MOC]];
+//    KVRootEntityPhysics *physX = [NSEntityDescription insertNewObjectForEntityForName:OBJ_PHYSICS inManagedObjectContext:[self MOC]];
 //    
 //    [[KVPersonController class]setupPerson:p data:d graphics:g physics:physX randomizedIfYES:YES];
 //    NSError *error = nil;
-//    if (![self.MOC save:&error]) {
+//    if (![[self MOC] save:&error]) {
 //        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 //        abort(); }
 }
@@ -204,8 +210,7 @@
 }
 #pragma mark - utilities
 
-- (NSManagedObject *)createEntity
-{
+- (NSManagedObject *)createEntity {
     return [NSEntityDescription insertNewObjectForEntityForName:[self entityClassName] inManagedObjectContext:[self MOC]];
 }
 
@@ -215,8 +220,7 @@
 
 - (NSMutableArray *)getEntities:(NSString *)entityName
                        sortedBy:(NSSortDescriptor *)sortDescriptor
-              matchingPredicate:(NSPredicate *)predicate
-{
+              matchingPredicate:(NSPredicate *)predicate {
     NSError *error = nil;
     
     // Create the request object
