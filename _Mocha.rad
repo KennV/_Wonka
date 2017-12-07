@@ -20,3 +20,5 @@ I Mean Don't get me wrong type safety is nice and all but I am still going to ha
 20171207@1530
 And this is where it becomes nice.
 My original plan was to make a plan; and that is clever and a half again. (*maybe too clever for my own good.*) So that is not what happened. The actual first thing to do is to add markdown helper comments on all of the functions in the base header. As a benefit then I would also have no need for comments in the implementation. Then when it is nice and clean and documented and formatted, maybe even some refactoring I will run a small kit of tests on this. I added the gitignore to this so lets see what happens next.
+
+Test
